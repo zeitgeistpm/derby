@@ -1,34 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Install dependencies
 
-## Getting Started
+`yarn install`
 
-First, run the development server:
+## Market creation
 
-```bash
-npm run dev
-# or
-yarn dev
+For this, mnemonic seed of a wallet funded with ZTG tokens is needed. Place such mnemonic seed in `.env` file:
+
+```
+WALLET_SEED=menmonic seed of a wallet with some ztg in it
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create `markets.json` modeled on `markets.json.example`. The `categoryNames` array needs to have the size of `numSlots` configuration entry and each of items is an array of fixed size representing category names used for each market respectively.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+`endTimestamp` configuration field represents time in the future at which all created markets will end and after which trading will be disabled.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Easy way to get timestamp is by using following command in browser console: `(new Date('May 16 2023 15:00 UTC')).valueOf()`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+After creating `markets.json` configuration item, run `yarn create-markets`. On successful execution the script will output the market ids of the created markets that has to be entered in the `lib/config.ts` file.
 
-To learn more about Next.js, take a look at the following resources:
+## App configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Configuring app visual identity is done through the `lib/config.ts` file. This file is already populated for the configuration setting set in `markets.json.example` and following documantation inside the file will help customize it according to your needs.
+Classes that are set as configuration entries in `lib/config.ts` are tailwind classes existing in `tailwind.config.js` file.

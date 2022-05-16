@@ -1,6 +1,7 @@
 import "dotenv/config";
 import SDK, { util } from "@zeitgeistpm/sdk";
 import {
+  DecodedMarketMetadata,
   MarketDisputeMechanism,
   MarketPeriod,
   MarketTypeOf
@@ -66,9 +67,6 @@ const deployMarkets = async (): Promise<void> => {
     });
     const metadata = {
       categories,
-      slug: `derby-${i}`,
-      description: `...`,
-      question: `...`
     };
     console.log("METADATA", JSON.stringify(metadata));
     const marketId = await sdk.models.createCpmmMarketAndDeployAssets(
@@ -80,7 +78,7 @@ const deployMarkets = async (): Promise<void> => {
       amounts,
       baseAmount,
       weights,
-      metadata,
+      metadata as DecodedMarketMetadata,
       false
     );
 

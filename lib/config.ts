@@ -103,7 +103,7 @@ const config: {
   categoryConfig: CategoryConfiguration;
 } = {
   // Set up derby configuration here
-  marketIds: [15, 16, 17],
+  marketIds: [21, 22, 23],
 
   staticRootUrl: "",
 

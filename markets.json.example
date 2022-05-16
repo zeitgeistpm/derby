@@ -3,5 +3,9 @@
   "endTimestamp": 4132699200000,
   "oracleAddress": "dDoracle4dress0000",
   "numSlots": 3,
-  "categoryNames": ["FC Dinamo Zagreb", "FC Dynamo Kyiv"]
+  "categoryNames": [
+    ["karura", "darwinia", "genshiro", "hydradx", "khala", "maker", "kilt", "none"],
+    ["shiden", "darwinia", "robonomics", "hydradx", "khala", "maker", "kilt", "none"],
+    ["karura", "darwinia", "moonriver", "hydradx", "shiden", "shyft", "mina", "none"]
+  ]
 }
