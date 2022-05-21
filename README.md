@@ -1,3 +1,7 @@
+## What is "Derby"?
+
+Nextjs application showcasing usage of categorical markets. A number of markets ending at the same time and have categories from a set of category names can be created. After all markets resolve with, traders are able to redeem all their winnings. 
+
 ## Install dependencies
 
 `yarn install`
