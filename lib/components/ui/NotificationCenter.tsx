@@ -13,8 +13,6 @@ const NotificationCard: FC<{
   content: string;
   type: NotificationType;
 }> = observer(({ close, timer, lifetime, content, type }) => {
-  const store = useDerby();
-  const { user } = store;
 
   const getColor = (type: NotificationType) => {
     switch (type) {
